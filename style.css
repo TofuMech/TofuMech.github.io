@@ -13,8 +13,11 @@
     --focus-background: rgba(0, 0, 0, 0.37) ;
 
 }
-img {
-    filter: none !important;
+@media (prefers-color-scheme: dark) {
+    img {
+        filter: none !important;
+        -webkit-filter: none !important;
+    }
 }
 html {
     height: 100%;
