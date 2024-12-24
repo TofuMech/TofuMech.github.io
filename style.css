@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@media (prefers-color-scheme: dark) {
 :root {
-    --text-color: #b11010;
-    --navbar-color: #81a0bd4f;
-    --background-color: #08193ffd;
-    --button-color: #cf1d1d;
+    --text-color: #b11010 !important;
+    --navbar-color: #81a0bd4f!important;
+    --background-color: #08193ffd!important;
+    --button-color: #cf1d1d!important;
 
     --bar-color: white;
-    --chunk1-color: rgba(255, 1, 1, 0.555) ;
-    --chunk2-color: rgb(85, 19, 160) ;
-    --chunk3-color: rgba(5, 255, 243, 0.466) ;
-    --circle-color: rgba(0, 5, 68, 0.644);
-    --focus-background: rgba(0, 0, 0, 0.37) ;
-
+    --chunk1-color: rgba(255, 1, 1, 0.555)!important ;
+    --chunk2-color: rgb(85, 19, 160)!important ;
+    --chunk3-color: rgba(5, 255, 243, 0.466) !important;
+    --circle-color: rgba(0, 5, 68, 0.644)!important;
+    --focus-background: rgba(0, 0, 0, 0.37) !important;
+}
+* {
+    color: initial !important;
+    background-color: initial !important;
+    border-color: initial !important;
+    fill: initial !important;
+    stroke: initial !important;
 }
 
 html {
@@ -306,7 +313,80 @@ h1 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.767);
     border-radius: 5px;
 }
-@media screen and (max-width: 1200px) {
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.rotatingCircle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--circle-color);
+    width: 900px;
+    height: 900px;
+    z-index: -10;
+    border-radius: 600px;
+    filter: blur(80px);
+    animation: rotate 30s infinite;
+}
+.rotatingChunk1 {
+    position: fixed;
+    left: 100px;
+    background-color: var(--chunk1-color);
+    width: 500px;
+    height: 700px;
+    z-index: -6;
+    border-radius: 600px;
+    filter: blur(0px);
+    animation: fadeInOut 10s ease-in-out infinite alternate;
+    rotate: .3s linear infinite,  /* Continuous rotation */
+
+}
+.rotatingChunk2 {
+    position: fixed;
+    background-color: var(--chunk2-color);
+    width: 500px;
+    height: 700px;
+    top: 300px;
+    left: 200px;
+    z-index: -9;
+    border-radius: 600px;
+    filter: blur(0px);
+    animation: fadeInOut 5s ease-in-out infinite alternate;
+}
+.rotatingChunk3 {
+    position: fixed;
+    background-color: var(--chunk3-color);
+    width: 500px;
+    left: 400px;
+    height: 700px;
+    z-index: -3;
+    border-radius: 600px;
+    filter: blur(0px);
+    animation: fadeInOut 6s ease-in-out infinite alternate;
+}
+@media screen and (max-width: 1200px) and (prefers-color-scheme: dark) {
+    img {
+        filter: none !important;
+        -webkit-filter: none !important;
+    }
+
     body {
         margin: 0;
         background-color: var(--background-color);
@@ -525,78 +605,5 @@ h1 {
         cursor: pointer;
     }
 }
-@media (prefers-color-scheme: dark) {
-    img {
-        filter: none !important;
-        -webkit-filter: none !important;
-    }
-}
-@keyframes rotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-.rotatingCircle {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--circle-color);
-    width: 900px;
-    height: 900px;
-    z-index: -10;
-    border-radius: 600px;
-    filter: blur(80px);
-    animation: rotate 30s infinite;
-}
-.rotatingChunk1 {
-    position: fixed;
-    left: 100px;
-    background-color: var(--chunk1-color);
-    width: 500px;
-    height: 700px;
-    z-index: -6;
-    border-radius: 600px;
-    filter: blur(0px);
-    animation: fadeInOut 10s ease-in-out infinite alternate;
-    rotate: .3s linear infinite,  /* Continuous rotation */
-
-}
-.rotatingChunk2 {
-    position: fixed;
-    background-color: var(--chunk2-color);
-    width: 500px;
-    height: 700px;
-    top: 300px;
-    left: 200px;
-    z-index: -9;
-    border-radius: 600px;
-    filter: blur(0px);
-    animation: fadeInOut 5s ease-in-out infinite alternate;
-}
-.rotatingChunk3 {
-    position: fixed;
-    background-color: var(--chunk3-color);
-    width: 500px;
-    left: 400px;
-    height: 700px;
-    z-index: -3;
-    border-radius: 600px;
-    filter: blur(0px);
-    animation: fadeInOut 6s ease-in-out infinite alternate;
 }
 
