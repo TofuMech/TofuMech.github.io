@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @media (prefers-color-scheme: dark) {
 :root {
-    --text-color: #b11010 !important;
-    --navbar-color: #81a0bd4f!important;
-    --background-color: #08193ffd!important;
-    --button-color: #cf1d1d!important;
+    --text-color: #b11010;
+    --navbar-color: #81a0bd4f;
+    --background-color: #08193ffd;
+    --button-color: #cf1d1d;
 
     --bar-color: white;
-    --chunk1-color: rgba(255, 1, 1, 0.555)!important ;
-    --chunk2-color: rgb(85, 19, 160)!important ;
-    --chunk3-color: rgba(5, 255, 243, 0.466) !important;
-    --circle-color: rgba(0, 5, 68, 0.644)!important;
-    --focus-background: rgba(0, 0, 0, 0.37) !important;
+    --chunk1-color: rgba(255, 1, 1, 0.555) ;
+    --chunk2-color: rgb(85, 19, 160) ;
+    --chunk3-color: rgba(5, 255, 243, 0.466) ;
+    --circle-color: rgba(0, 5, 68, 0.644);
+    --focus-background: rgba(0, 0, 0, 0.37) ;
 }
 * {
-    color: initial !important;
-    background-color: initial !important;
-    border-color: initial !important;
-    fill: initial !important;
-    stroke: initial !important;
-}
+        color: initial ;
+        background-color: initial ;
+        border-color: initial ;
+        fill: initial ;
+        stroke: initial ;
+    }
 
 html {
     height: 100%;
@@ -605,5 +605,13 @@ h1 {
         cursor: pointer;
     }
 }
+@media (prefers-color-scheme: dark) {
+    img {
+        filter: none !important;
+        -webkit-filter: none !important;
+        mix-blend-mode: normal !important;
+    }
+}
+
 }
 
