@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@media (prefers-color-scheme: dark) {
 :root {
     --text-color: #b11010;
     --navbar-color: #81a0bd4f;
@@ -607,11 +606,11 @@ h1 {
 }
 @media (prefers-color-scheme: dark) {
     img {
-        filter: none !important;
-        -webkit-filter: none !important;
-        mix-blend-mode: normal !important;
+        filter: none ;
+        -webkit-filter: none ;
+        mix-blend-mode: normal ;
     }
 }
 
-}
+
 
