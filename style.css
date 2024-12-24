@@ -4,6 +4,17 @@
     --navbar-color: #81a0bd4f;
     --background-color: #08193ffd;
     --button-color: #cf1d1d;
+
+    --bar-color: white;
+    --chunk1-color: rgba(255, 1, 1, 0.555) ;
+    --chunk2-color: rgb(85, 19, 160) ;
+    --chunk3-color: rgba(5, 255, 243, 0.466) ;
+    --circle-color: rgba(0, 5, 68, 0.644);
+    --focus-background: rgba(0, 0, 0, 0.37) ;
+
+}
+img {
+    filter: none !important;
 }
 html {
     height: 100%;
@@ -56,7 +67,7 @@ h1 {
     left: 6px;
     bottom: 130px;
 }
-.artCard, .blogCard, .musicCard {
+.newprojectCard, .blogCard, .musicCard {
     overflow: hidden;
     position: absolute;
     top: 320px;
@@ -65,33 +76,41 @@ h1 {
     padding-top: 19em;
     text-align: center;
     z-index: 10;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     background-size: cover;
     font-family: "Bebas Neue", sans-serif;
     font-size: larger;
     transition: 2.5s;
 }
+
+.newprojectCard {
+    left: 13%;
+    filter: drop-shadow(0 10px 10px #131736d3);
+}
+
 .blogCard {
     transition: 2s;
     left: 40%;
-    background-image: url(images/navImages/words.jpg);
-
-
 }
+
 .musicCard {
     transition: 1.5s;
     left: 67%;
-    background-image: url(images/navImages/piano.jpg);
-    filter: drop-shadow(0 10px 10px #131736d3);
-
-
-}
-.artCard {
-    left: 13%;
-    background-image: url(images/45.jpg);
     filter: drop-shadow(0 10px 10px #131736d3);
 }
+
+.newprojectCard img, .blogCard img, .musicCard img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -6;
+}
+
+
 .cardGradient {
     background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(0, 0, 0));
     position: absolute;
@@ -289,7 +308,7 @@ h1 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.767);
     border-radius: 5px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (prefers-color-scheme: dark) {
     body {
         margin: 0;
         background-color: var(--background-color);
@@ -311,11 +330,11 @@ h1 {
     }
     .bar1, .bar2, .bar3 {
         position: relative;
-        background-color: rgb(255, 255, 255);
+        background-color: var(--bar-color);
         height: 8px;
         border-radius: 15px;
         transition: transform 0.3s ease-in-out;
-    }
+    } 
     .bar1 {
         width: 70px;
         top: 35px;
@@ -345,13 +364,14 @@ h1 {
         left: -100%; /* Off-screen by default */
         top: 150px; /* Make sure it aligns with the mobile navbar */
         transform: translateY(-50%);
-        transition: left 0.3s ease-in-out;
+        transition: left 1s ease-in-out;
         z-index: 100;
     }
     .showmobileButtons {
         left: 0; /* Bring the buttons back into view */
         transition: 1s;
     }
+   
     .mobilehomeButton {
         top: 160px; 
         position: absolute;
@@ -443,7 +463,6 @@ h1 {
 
     }
     .homeTitle {
-        background-color: rgba(0, 17, 255, 0);
         width: 100%;
         height: 120px;
         top: 100px;
@@ -454,12 +473,10 @@ h1 {
     #randomText {
         top: -80px;
     }
-
     .portfolio-container {
         position: absolute;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        background: rgba(0, 128, 0, 0);
         width: 70%;
         height: 650px;
         border-radius: 5px;
@@ -494,7 +511,6 @@ h1 {
         height: auto; /* Allow height to adjust */
         object-fit: contain; /* Ensure entire image is visible */
         z-index: 100;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.767);
         border-radius: 5px;
     }
     .enlarged-container {
@@ -503,23 +519,19 @@ h1 {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: var(--focus-background);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 100;
         cursor: pointer;
     }
-    .enlarged-container img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.767);
-        border-radius: 5px;
-    }
+    
+    
 
 
 }
+
 @keyframes rotate {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -544,7 +556,7 @@ h1 {
     margin: 0;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 183, 255, 0.315);
+    background-color: var(--circle-color);
     width: 900px;
     height: 900px;
     z-index: -10;
@@ -555,7 +567,7 @@ h1 {
 .rotatingChunk1 {
     position: fixed;
     left: 100px;
-    background-color: rgba(255, 0, 0, 0.301);
+    background-color: var(--chunk1-color);
     width: 500px;
     height: 700px;
     z-index: -6;
@@ -567,7 +579,7 @@ h1 {
 }
 .rotatingChunk2 {
     position: fixed;
-    background-color: rgba(0, 255, 21, 0.363);
+    background-color: var(--chunk2-color);
     width: 500px;
     height: 700px;
     top: 300px;
@@ -579,7 +591,7 @@ h1 {
 }
 .rotatingChunk3 {
     position: fixed;
-    background-color: rgba(234, 0, 255, 0.274);
+    background-color: var(--chunk3-color);
     width: 500px;
     left: 400px;
     height: 700px;
@@ -588,3 +600,4 @@ h1 {
     filter: blur(0px);
     animation: fadeInOut 6s ease-in-out infinite alternate;
 }
+

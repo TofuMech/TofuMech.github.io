@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const homeButton = document.querySelector('.homeButton');
     const artworkButton = document.querySelector('.artworkButton');
-    const artCard = document.querySelector('.artCard');
+    const artCard = document.querySelector('.newprojectCard');
     const blogCard = document.querySelector('.blogCard');
     const musicCard = document.querySelector('.musicCard');
     const randomTextElement = document.getElementById('randomText');
@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     artworkButton.addEventListener('click', () => {
         moveCardsAway();
         showArt();
+        
     });
     homeButton.addEventListener('click', () => {
         moveCardsBack();
@@ -124,10 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileartButton.addEventListener('click', () => {
         moveCardsAway();
         showArt();
+        mobileButtons.classList.toggle('showmobileButtons');
+        toggleBars();
     })
 
-    mobileHomeButton.addEventListener('click', () => {
+    mobilehomeButton.addEventListener('click', () => {
         moveCardsBack();
         hideArt();
+        mobileButtons.classList.toggle('showmobileButtons');
+        toggleBars();
     })
 });
