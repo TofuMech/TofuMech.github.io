@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @media (prefers-color-scheme: dark) {
 :root {
-    --text-color: #b11010;
+    --text-color: #fafafa;
     --navbar-color: #81a0bd4f;
     --background-color: #08193ffd;
     --button-color: #cf1d1d;
@@ -13,13 +13,7 @@
     --circle-color: rgba(0, 5, 68, 0.644);
     --focus-background: rgba(0, 0, 0, 0.37) ;
 }
-* {
-        color: initial ;
-        background-color: initial ;
-        border-color: initial ;
-        fill: initial ;
-        stroke: initial ;
-    }
+
 
 html {
     height: 100%;
@@ -604,12 +598,15 @@ h1 {
         z-index: 100;
         cursor: pointer;
     }
-}
-@media (prefers-color-scheme: dark) {
+
     img {
-        filter: none !important;
-        -webkit-filter: none !important;
-        mix-blend-mode: normal !important;
+        filter: none ;
+        filter: invert(0);
+        -webkit-filter: none ;
+        mix-blend-mode: normal ;
+    }
+    body, p, h1, h2, h3, h4, h5, h6 {
+        color: var(--text-color);
     }
 }
 
